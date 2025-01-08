@@ -1,0 +1,3 @@
+function wolfReal(){
+    Math.random
+}

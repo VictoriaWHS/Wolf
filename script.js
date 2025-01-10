@@ -1,4 +1,19 @@
+
+let wolf =0;
+function wolves(){
+    let wolf=Math.random(Math.floor()*2);
+    console.log(" this is the number" + wolf);
+    if (wolf==1){
+        alert("wolf");
+        //not working//
+        }
+    else{
+        alert("no wolf");
+    } 
+    goPen();
+}
 function goPen(){
+    //home = Pen//
     window.location.replace("pen.html");
   
 }
@@ -11,26 +26,12 @@ function goChoose(){
 }
 
 
-function wolves(){
-    let v=Math.random(Math.floor()*2);
-    console.log(" this is the number" + v);
-    //above is just to check its working//
-    if (v==1){
-        alert("wolf");
-        home();
-        }
-    else{
-        alert("no wolf");
-    } 
-}
 
-
-function goHome(){
-    
-}
 
 function wolfChoice(){
-    alert("This is wolfChoice");
+    alert("Wolf or no wolf");
+    //This is where there is the choice//
+    if (choice != "Go to pen"){
 }
 
 function village(){

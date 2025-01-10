@@ -1,5 +1,10 @@
 function goPen(){
     window.location.replace("pen.html");
+  
+}
+function goVillage(){
+    window.location.replace("village.html");
+    
 }
 
 function wolves(){
@@ -16,8 +21,8 @@ function wolves(){
 }
 
 
-function home(){
-    alert("This is home");
+function goHome(){
+    
 }
 
 function wolfChoice(){
@@ -25,7 +30,7 @@ function wolfChoice(){
 }
 
 function village(){
-
+    alert("This is village");
 }
 
 function randomizeQuestions(){

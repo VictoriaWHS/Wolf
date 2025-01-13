@@ -1,13 +1,17 @@
 <html>
     <head>
     <title>Wolf? Pen</title>
-    <link rel="stylesheet" type="text/css" src="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
         <h1>Pen</h1>
         <button onclick="goVillage()";>Go Village</button>
         <button onclick="goChoose()";>choose</button>
-        <button onclick="questions()";>?</button>
+        <button onclick="goQuestion()";>?</button>
+        <div id="wolfChoice" class="hide">
+                <button onclick="wolfChoice()";>wolf</button>
+                <button onclick="wolfChoice()";>no wolf</button>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

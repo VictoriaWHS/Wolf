@@ -29,6 +29,7 @@ function wolfChoice(isWolf){
 
 function village(){
     alert("This is village");
+    randomizeQuestions();
 }
 
 function randomizeQuestions(){
@@ -40,5 +41,7 @@ function questions(){
 }
 
 function endGame(){
-
+    if (points>0||sheep>0){
+        alert("You have won.  You have " + points+" points, and " +sheep + " left!");
+    }
 }

@@ -28,7 +28,7 @@ function goVillage(){
 }
 
 
-function wolfChoice(isWolf){
+function wolfChoice(){
     //This is where there is the choice//
     if (isWolf==true){
         alert("Wolf")

@@ -35,7 +35,7 @@ function wolfChoice(){
     //This is where there is the choice//
     let choice =prompt("Wolf or no wolf?");
     if (choice!="Exit"){
-     if (choice==wolfExists){
+     if (choice=="wolf"){
         alert("No change to sheep. +1point.");
         points+1
         goPen();
@@ -46,6 +46,7 @@ function wolfChoice(){
         goPen();
     }
     goPen();
+    //Need to go over//
 }
 
 function village(){
@@ -86,7 +87,7 @@ function questions(){
 }
 
 function endGame(){
-    if (points>0||sheep>0){
+    if (points>0&&sheep>0){
         alert("You have won.  You have " + points+" points, and " +sheep + " left!");
     }
 }

@@ -1,6 +1,7 @@
 
 wolfExists=false;
-
+    sheep=12
+    points=0
 function globals(){
     let wolfExists=localStorage.getItem("wolfExists");
     console.log("wolf? " +  wolfExists);
@@ -29,11 +30,22 @@ function goVillage(){
 
 
 function wolfChoice(){
+    // sheep=12
+    // points=0
     //This is where there is the choice//
-    if (isWolf==true){
-        alert("Wolf")
+    let choice =prompt("Wolf or no wolf?");
+    if (choice!="Exit"){
+     if (choice==wolfExists){
+        alert("No change to sheep. +1point.");
+        points+1
+        goPen();
+     }
+     else alert("-2 sheep, -1 point.");
+        sheep-2
+        points-1
+        goPen();
     }
-    else alert("No wolf");
+    goPen();
 }
 
 function village(){

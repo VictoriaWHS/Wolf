@@ -1,7 +1,7 @@
 
-wolfExists=false;
-    sheep=12
-    points=0
+var wolfExists=false;
+var sheep=12
+var points=0
 function globals(){
     let wolfExists=localStorage.getItem("wolfExists");
     console.log("wolf? " +  wolfExists);
@@ -16,10 +16,12 @@ function wolves(){
     } 
     localStorage.setItem("wolfExists", wolfExists);
 }
-
+function newRound(){
+    wolves();
+    alert("the wolf is" + wolfExists);
+    goPen();
+}
 function goPen(){
-    //home = Pen//
-    
     window.location.replace("pen.html");
   
 }
@@ -30,23 +32,22 @@ function goVillage(){
 
 
 function wolfChoice(){
-    // sheep=12
-    // points=0
-    //This is where there is the choice//
+//doesnt work
     let choice =prompt("Wolf or no wolf?");
-    if (choice!="Exit"){
-     if (choice=="wolf"){
-        alert("No change to sheep. +1point.");
-        points+1
-        goPen();
-     }
-     else alert("-2 sheep, -1 point.");
-        sheep-2
-        points-1
-        goPen();
-    }
-    goPen();
-    //Need to go over//
+    //wolfExists says if theres a wolf.  Line 42 is basically saying that]
+    //if choice is wolf and _______(wolf or no wolf) You win.  I dont understand this.
+    //I have to write three of these somehow.
+        if (choice=="wolf" && wolfExists){
+            alert("no change to sheep. +1 point");
+            points++
+        }
+        else {
+            alert("-2 sheep, -1 point.");
+            sheep-=2;
+            points--;
+        }
+        alert("New round");
+        newRound();
 }
 
 function village(){

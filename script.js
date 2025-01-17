@@ -29,26 +29,33 @@ function goVillage(){
     
 }
 
-
+buttonChoice(){
+    function displayResult() {
+        let choice=0;
+      let choice=document.getElementById("one").innerHTML = "wolf";
+      let choice=document.getElementById("two").innerHTML = "noWolf";
+      //testing//
+    }
+}
 function wolfChoice(){
 //doesnt work
-    let choice =prompt("Wolf or no wolf?");
+    let choice =
     alert("The wolf " + wolfExists);
-        if (choice=="wolf" && choice==wolfExists && wolfExists==true){
+        if (choice=="wolf" && choice==wolfExists && wolfExists){
             alert("no change to sheep. +1 point");
             points++
         }
-        else if(choice=="noWolf"&& choice==wolfExists && wolfExists==false){
+        else if(choice=="noWolf"&& choice==wolfExists && wolfExists){
             alert("no change to sheep. +1 point");
             points++
         }
-        else if(choice=="wolf"&&choice!=wolfExists && wolfExists==false){
+        else if(choice=="wolf"&&choice!=wolfExists && wolfExists){
             alert("-2 sheep, -1 point.");
             sheep-=2;
             points--;
             alert("wolf = " + wolfExists+ " and choice = "+ choice)
         }
-        else if(choice=="noWolf"&&choice!=wolfExists && wolfExists==true){
+        else if(choice=="noWolf"&&choice!=wolfExists) {
             alert("-2 sheep, -1 point.");
             sheep-=2;
             points--;

@@ -18,7 +18,6 @@ function wolves(){
 }
 function newRound(){
     wolves();
-    alert("the wolf is" + wolfExists);
     goPen();
 }
 function goPen(){
@@ -34,18 +33,28 @@ function goVillage(){
 function wolfChoice(){
 //doesnt work
     let choice =prompt("Wolf or no wolf?");
-    //wolfExists says if theres a wolf.  Line 42 is basically saying that]
-    //if choice is wolf and _______(wolf or no wolf) You win.  I dont understand this.
-    //I have to write three of these somehow.
-        if (choice=="wolf" && wolfExists){
+    alert("The wolf " + wolfExists);
+        if (choice=="wolf" && choice==wolfExists && wolfExists==true){
             alert("no change to sheep. +1 point");
             points++
         }
-        else {
+        else if(choice=="noWolf"&& choice==wolfExists && wolfExists==false){
+            alert("no change to sheep. +1 point");
+            points++
+        }
+        else if(choice=="wolf"&&choice!=wolfExists && wolfExists==false){
             alert("-2 sheep, -1 point.");
             sheep-=2;
             points--;
+            alert("wolf = " + wolfExists+ " and choice = "+ choice)
         }
+        else if(choice=="noWolf"&&choice!=wolfExists && wolfExists==true){
+            alert("-2 sheep, -1 point.");
+            sheep-=2;
+            points--;
+            alert("wolf = " + wolfExists+ " and choice = "+ choice)
+        }
+
         alert("New round");
         newRound();
 }

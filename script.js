@@ -29,17 +29,26 @@ function goVillage(){
     
 }
 
-buttonChoice(){
-    function displayResult() {
-        let choice=0;
-      let choice=document.getElementById("one").innerHTML = "wolf";
-      let choice=document.getElementById("two").innerHTML = "noWolf";
-      //testing//
+function buttonChoice(wolfPick){
+    let message="";
+    if (wolfPick==true){
+        message="You predict a wolf<br>";
     }
+    else message="You predict no wolf<br>";
+    let feedBack=document.createElement("div");
+    message+="let's see if you're right..."
+    feedBack.innerHTML=message;
+    feedBack.id="feedBack";
+    document.body.appendChild(feedBack);
+    let findOut=document.createElement("button");
+    findOut.innerHTML="find out";
+    findOut.id="find out";
+    findOut.addEventListener("click",wolfChoice);
+    feedBack.appendChild(findOut);
 }
+
 function wolfChoice(){
 //doesnt work
-    let choice =
     alert("The wolf " + wolfExists);
         if (choice=="wolf" && choice==wolfExists && wolfExists){
             alert("no change to sheep. +1 point");

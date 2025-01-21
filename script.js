@@ -42,37 +42,44 @@ function buttonChoice(wolfPick){
     document.body.appendChild(feedBack);
     let findOut=document.createElement("button");
     findOut.innerHTML="find out";
-    findOut.id="find out";
+    findOut.id="findOut";
     findOut.addEventListener("click",wolfChoice);
     feedBack.appendChild(findOut);
 }
 
 function wolfChoice(){
-//doesnt work
-    alert("The wolf " + wolfExists);
+    let message="";
+   
+    let feedBack=document.getElementById("feedBack");
+    feedBack.innerHTML="";
+
+    message+="The wolf " + wolfExists;
         if (choice=="wolf" && choice==wolfExists && wolfExists){
-            alert("no change to sheep. +1 point");
+            message+="no change to sheep. +1 point";
             points++
         }
         else if(choice=="noWolf"&& choice==wolfExists && wolfExists){
-            alert("no change to sheep. +1 point");
+            message+="no change to sheep. +1 point";
             points++
         }
         else if(choice=="wolf"&&choice!=wolfExists && wolfExists){
             alert("-2 sheep, -1 point.");
             sheep-=2;
             points--;
-            alert("wolf = " + wolfExists+ " and choice = "+ choice)
+            message+="wolf = " + wolfExists+ " and choice = "+ choice;
         }
         else if(choice=="noWolf"&&choice!=wolfExists) {
-            alert("-2 sheep, -1 point.");
+            message+="-2 sheep, -1 point.";
             sheep-=2;
             points--;
-            alert("wolf = " + wolfExists+ " and choice = "+ choice)
+           message+="wolf = " + wolfExists+ " and choice = "+ choice;
         }
-
-        alert("New round");
-        newRound();
+        feedBack.innerHTML=message;
+        let newRound=document.createElement("button");
+        newRound.innerHTML="new round";
+        newRound.id="newRound";
+        newRound.addEventListener("click",newRound);
+        feedBack.appendChild(newRound);
 }
 
 function village(){

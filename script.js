@@ -1,5 +1,6 @@
 
 var wolfExists=false;
+var wolfPick=false;
 var sheep=12
 var points=0
 function globals(){
@@ -47,33 +48,37 @@ function buttonChoice(wolfPick){
     feedBack.appendChild(findOut);
 }
 
-function wolfChoice(){
+function wolfChoice(wolfPick){
     let message="";
    
     let feedBack=document.getElementById("feedBack");
     feedBack.innerHTML="";
+    let exists="There was a wolf last night";
+    if (!wolfExists) {exists="There was no wolf last night";}
 
-    message+="The wolf " + wolfExists;
-        if (choice=="wolf" && choice==wolfExists && wolfExists){
-            message+="no change to sheep. +1 point";
+    message+=exists;
+
+        if (wolfPick && wolfExists){
+            message+=" no change to sheep. +1 point";
             points++
         }
-        else if(choice=="noWolf"&& choice==wolfExists && wolfExists){
-            message+="no change to sheep. +1 point";
+        else if(!wolfPick && !wolfExists){
+            message+=" no change to sheep. +1 point";
             points++
         }
-        else if(choice=="wolf"&&choice!=wolfExists && wolfExists){
+        else if(wolfPick && !wolfExists){
             alert("-2 sheep, -1 point.");
             sheep-=2;
             points--;
-            message+="wolf = " + wolfExists+ " and choice = "+ choice;
+            message+=" wolf = " + wolfExists+ " and choice = "+ choice;
         }
-        else if(choice=="noWolf"&&choice!=wolfExists) {
-            message+="-2 sheep, -1 point.";
+        else if(!wolfPick && wolfExists) {
+            message+=" -2 sheep, -1 point.";
             sheep-=2;
             points--;
-           message+="wolf = " + wolfExists+ " and choice = "+ choice;
+           message+=" wolf = " + wolfExists+ " and wolfPick = "+ choice;
         }
+        console.log(message+points)
         feedBack.innerHTML=message;
         let newRound=document.createElement("button");
         newRound.innerHTML="new round";
